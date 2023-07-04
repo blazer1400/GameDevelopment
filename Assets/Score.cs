@@ -1,36 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
-using System.Threading;
 
-public class Score : MonoBehaviour
+public class ScoreCount : MonoBehaviour
 {
-    
-    public Text text;
+    public static ScoreCount Instance { get; private set; }
+    public int score;
 
-    public float scoreIncreaseRate = 1f; // Rate at which the score increases per second
-    public float currentScore = 0f;
-
-    private void Start()
+    private void Awake()
     {
-        // Start increasing the score
-        InvokeRepeating("IncreaseScore", 1f, 1f); // Invoke IncreaseScore method every second
-    }
-
-    private void IncreaseScore()
-    {
-        if (currentScore < 50) {
-            currentScore += currentScore / 2;
-        } else if (currentScore < 1000) {
-            currentScore += currentScore / 4;
+        if (Instance == null) {
+            Instance = this;
         } else {
-            currentScore += currentScore / 10;
+            Destroy(gameObject);
         }
-        text.text = "Score: " + Math.Round(currentScore).ToString();
     }
 }
-
-
- 

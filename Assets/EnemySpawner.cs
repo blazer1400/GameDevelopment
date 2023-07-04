@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
         {
             // Instantiate a new enemy at the spawner's position and rotation
             Instantiate(enemyPrefab, transform.position, transform.rotation);
-            yield return new WaitForSeconds(new RandomNumberGenerator((int)DateTime.Now.Ticks).Next(1, 4));
+            yield return new WaitForSeconds(new RandomNumberGenerator((int)DateTime.Now.Ticks).Next(1, 3));
         }
     }
 }

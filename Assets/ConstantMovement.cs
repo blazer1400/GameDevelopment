@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ConstantMovement : MonoBehaviour
 {
     public float speed = 1f; // Adjust the speed as desired
@@ -19,6 +20,6 @@ public class ConstantMovement : MonoBehaviour
 
     private void IncreaseSpeed()
     {
-        speed += Score.currentScore;
+        // speed += Score.currentScore;
     }
 }
