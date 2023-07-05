@@ -20,6 +20,6 @@ public class ConstantMovement : MonoBehaviour
 
     private void IncreaseSpeed()
     {
-        // speed += Score.currentScore;
+        // speed += 1;
     }
 }

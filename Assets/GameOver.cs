@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour
         if (other.CompareTag("obstacle") && gameObject.CompareTag("Player") && !isGameOver)
         {
             isGameOver = true;
+            AudioManager.instance.Play("GameOver");
             ShowGameOverPanel();
         }
     }

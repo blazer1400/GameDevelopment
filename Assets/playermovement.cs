@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class playermovement : MonoBehaviour
 {
+
     private bool isGrounded; // Flag to check if the player is on the ground
     private bool isDescending; // Flag to check if the player is descending
 
@@ -12,6 +14,7 @@ public class playermovement : MonoBehaviour
     {
         isGrounded = true; // Assume the player starts on the ground
         isDescending = false;
+        InvokeRepeat()
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class playermovement : MonoBehaviour
         {
             // Apply jump force only when the player is on the ground
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 8, 0);
+            AudioManager.instance.Play("Jump");
             isGrounded = false; // Set isGrounded to false to prevent multiple jumps
         }
 
